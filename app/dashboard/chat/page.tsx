@@ -57,7 +57,7 @@ function FormattedMessage({ content }: { content: string }) {
     let currentIndex = 0
 
     for (let i = 0; i < lines.length; i++) {
-      const line = lines[i].trim()
+      const line = lines[i].replace("**","").trim()
 
       if (!line) {
         elements.push(<div key={currentIndex++} className="h-2" />)
@@ -69,7 +69,7 @@ function FormattedMessage({ content }: { content: string }) {
         elements.push(
           <div key={currentIndex++} className="mb-4 mt-6">
             <h3 className="text-lg font-bold text-blue-700 border-b-2 border-blue-200 pb-2">
-              {line.replace("### ", "")}
+              {line.replace("### ", "").replace("**","")}
             </h3>
           </div>,
         )
@@ -176,7 +176,7 @@ function FormattedMessage({ content }: { content: string }) {
       if (line.length > 0) {
         elements.push(
           <p key={currentIndex++} className="text-gray-700 leading-relaxed mb-3">
-            {line}
+            {line.replace("**","")}
           </p>,
         )
       }
