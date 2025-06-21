@@ -95,7 +95,7 @@ export default function DashboardPage() {
             </div>
           </CardHeader>
           <CardContent>
-            <CardDescription className="mb-4">Ask our AI about destinations, budgets, and travel plans</CardDescription>
+            <CardDescription className="mb-4">Ask our AI about destinations, budgets, and trip plans</CardDescription>
             <Button asChild className="w-full bg-blue-600 hover:bg-blue-700">
               <Link href="/dashboard/chat">Chat Now</Link>
             </Button>
