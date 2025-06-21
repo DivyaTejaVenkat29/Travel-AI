@@ -52,7 +52,7 @@ function getRegionCurrency(country: string) {
 function FormattedMessage({ content }: { content: string }) {
   // Parse and format the message content
   const formatContent = (text: string) => {
-    const lines = text.split("\n")
+    const lines = text.replace("**","").split("\n")
     const elements: React.ReactNode[] = []
     let currentIndex = 0
 
@@ -80,7 +80,7 @@ function FormattedMessage({ content }: { content: string }) {
       if (line.includes("**") && line.includes("km")) {
         const parts = line.split("**")
         if (parts.length >= 3) {
-          const placeName = parts[1]
+          const placeName = parts[1].replace("**","")
           const details = parts[2].replace(":", "").trim()
 
           elements.push(
@@ -106,7 +106,7 @@ function FormattedMessage({ content }: { content: string }) {
 
       // Cost breakdown items
       if (line.includes("Accommodation:") || line.includes("Food:") || line.includes("Transportation:")) {
-        const [category, cost] = line.split(":")
+        const [category, cost] = line.replace("**","").split(":")
         let icon = <Home className="h-4 w-4" />
         let bgColor = "bg-green-50"
         let textColor = "text-green-700"
@@ -125,7 +125,7 @@ function FormattedMessage({ content }: { content: string }) {
           <div key={currentIndex++} className={`flex items-center gap-3 p-3 ${bgColor} rounded-md mb-2`}>
             <div className={textColor}>{icon}</div>
             <div className="flex-1">
-              <span className="font-medium text-gray-700">{category.replace("- ", "").trim()}:</span>
+              <span className="font-medium text-gray-700">{category.replace("- ", "").replace("**","").trim()}:</span>
               <span className={`ml-2 font-bold ${textColor}`}>{cost.trim()}</span>
             </div>
           </div>,
@@ -148,7 +148,7 @@ function FormattedMessage({ content }: { content: string }) {
 
       // Regular bullet points
       if (line.startsWith("- ")) {
-        const content = line.replace("- ", "").trim()
+        const content = line.replace("- ", "").replace("**","").trim()
         elements.push(
           <div key={currentIndex++} className="flex items-start gap-2 mb-2 pl-4">
             <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
@@ -160,7 +160,7 @@ function FormattedMessage({ content }: { content: string }) {
 
       // Numbered lists
       if (/^\d+\./.test(line)) {
-        const content = line.replace(/^\d+\.\s*/, "").trim()
+        const content = line.replace(/^\d+\.\s*/, "").replace("**","").trim()
         elements.push(
           <div key={currentIndex++} className="flex items-start gap-3 mb-3 p-3 bg-blue-50 rounded-md">
             <div className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
