@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Send, Bot, User, MapPin, Calendar, DollarSign, Loader2, AlertCircle, Car, Home, Utensils } from "lucide-react"
 import { useChat } from "ai/react"
-
+import { Textarea } from "@/components/ui/textarea"
 interface QuickQuestion {
   id: string
   text: string
