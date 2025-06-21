@@ -532,7 +532,7 @@ export default function ChatPage() {
           {/* Input Form */}
           <div className="p-4 border-t">
             <form onSubmit={handleSubmit} className="flex space-x-2">
-              <Input
+              <Textarea
                 value={input}
                 onChange={handleInputChange}
                 placeholder={
