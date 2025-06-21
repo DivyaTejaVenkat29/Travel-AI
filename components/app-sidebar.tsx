@@ -101,7 +101,7 @@ export function AppSidebar() {
             <Compass className="h-4 w-4" />
           </div>
           <div className="flex flex-col">
-            <span className="text-sm font-semibold">TravelAI</span>
+            <span className="text-sm font-semibold">Travel Explorer</span>
             <span className="text-xs text-muted-foreground">AI-Powered Travel</span>
           </div>
         </div>
