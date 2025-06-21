@@ -111,7 +111,7 @@ export default function DashboardPage() {
           </CardHeader>
           <CardContent>
             <CardDescription className="mb-4">Create detailed itineraries with budget tracking</CardDescription>
-            <Button asChild variant="outline" className="w-full border-green-600 text-green-600 hover:bg-green-50">
+            <Button asChild  className="w-full border-green-600 text-green-600 hover:bg-green-50">
               <Link href="/dashboard/trips/new">Start Planning</Link>
             </Button>
           </CardContent>
@@ -126,7 +126,7 @@ export default function DashboardPage() {
           </CardHeader>
           <CardContent>
             <CardDescription className="mb-4">Discover attractions and activities near you</CardDescription>
-            <Button asChild variant="outline" className="w-full border-purple-600 text-purple-600 hover:bg-purple-50">
+            <Button asChild  className="w-full border-purple-600 text-purple-600 hover:bg-purple-50">
               <Link href="/dashboard/explore">Explore</Link>
             </Button>
           </CardContent>
